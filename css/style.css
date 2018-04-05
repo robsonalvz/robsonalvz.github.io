@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav.menu {
+    background-color: #37474f;
+}
+
+body {
+    background-color: #263238;
+    color: white;
+}
+
+#inicio {
+    background-image: url("../images/fundo.jpg");
+    background-size: cover;
+    background-position: bottom;
+}
+
+#inicio img {
+    width: 10%;
+}
+
+#inicio,
+#portifolio,
+#working,
+#contato {
+    padding-top: 70px;
+}
+
+#portifolio img {
+    width: 100%;
+}
+
+#modal1 {
+    color: black;
+}
+
+#inicio {
+    height: 49%;
+}
+
+#inicio h1 {
+    color: #263238;
+}
+
+.section p {
+    text-align: justify;
+}
+
+#working p {
+    text-align: justify;
+    padding: 2px;
+}
+
+#working ol {
+    list-style-type: circle;
+}
+
+#working ol li {
+    text-align: justify;
+    padding: 15px;
+}
+
+footer.page-footer {
+    background-color: #37474f;
+}
+
+.links {
+    display: grid;
+}
+
+.links a {
+    padding: 5px;
+}
+
+/*Dispositicos moveis*/
+
+@media screen and (max-width: 768px) {
+    #inicio {
+        background-position: left;
+        height: 70%;
+    }
+    #inicio img {
+        width: 100px;
+    }
+    .links {
+        margin-top: 30px;
+        display: grid;
+    }
+    .links a {
+        padding: 5px;
+    }
+}
