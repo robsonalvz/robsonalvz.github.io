@@ -18,9 +18,12 @@ body {
     background-size: cover;
     background-position: bottom;
 }
-
+span{
+    padding:11px;
+    border-style:groove;
+}
 #inicio img {
-    width: 10%;
+    width: 12%;
 }
 
 #inicio,
