@@ -1,224 +1,574 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <!--Favico-->
-    <link rel="shortcut icon" href="images/favico/apple-icon-180x180.png">
-    <!--CSS -->
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css?version=12">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <!--Particles-->
-     <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
-  <script type='text/javascript' src='jquery.particleground.min.js'></script>
-  <script type='text/javascript' src='js/demo.js'></script>
-    
-    <title>Robson Alves</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robson Alves — Software Engineer</title>
+    <meta name="description" content="Software Engineer at GoDaddy. Building payment systems, breaking monoliths, and mass-producing microservices since 2014.">
+    <link rel="shortcut icon" href="images/favico/apple-icon-180x180.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-   
+    <!-- Scanline overlay -->
+    <div class="scanline"></div>
 
-    <!--Menu-->
-    <div class="navbar-fixed">
-        <nav class="menu">
-            <ul>
-                <li><a href="#particles" class="scroll">Home</a></li>
-                <li><a href="#portifolio" class="scroll">Portifolio</a></li>
-                <li><a href="#working" class="scroll">Resume</a></li>
-                <li><a href="#contato" class="scroll">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
+    <!-- Noise texture -->
+    <div class="noise"></div>
 
-    <!--Homee -->
-    <div id="particles">
-        <div class="intro inicio" >
-            <img src="images/perfil.jpg" class="circle" alt="perfil">
-            <h4>Hello!</h4>
-            <h5>Hi, I'm Robson Alves - a computer science student and software developer. </h5>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <span class="prompt">~/</span>robson<span class="accent">.</span>dev
+            </a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link scroll-to"><span class="prompt">01.</span> about</a>
+                <a href="#skills" class="nav-link scroll-to"><span class="prompt">02.</span> skills</a>
+                <a href="#experience" class="nav-link scroll-to"><span class="prompt">03.</span> xp</a>
+                <a href="#projects" class="nav-link scroll-to"><span class="prompt">04.</span> projects</a>
+                <a href="#contact" class="nav-link scroll-to"><span class="prompt">05.</span> contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" class="mobile-link scroll-to"><span class="prompt">01.</span> about</a>
+        <a href="#skills" class="mobile-link scroll-to"><span class="prompt">02.</span> skills</a>
+        <a href="#experience" class="mobile-link scroll-to"><span class="prompt">03.</span> xp</a>
+        <a href="#projects" class="mobile-link scroll-to"><span class="prompt">04.</span> projects</a>
+        <a href="#contact" class="mobile-link scroll-to"><span class="prompt">05.</span> contact</a>
     </div>
-    <div class="section">
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-terminal">
+            <div class="terminal-bar">
+                <div class="terminal-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <span class="terminal-title">robson@portfolio ~ %</span>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="prompt-symbol">$</span>
+                    <span class="command">whoami</span>
+                </div>
+                <div class="terminal-output hero-name">
+                    <h1>Robson Alves</h1>
+                </div>
+                <div class="terminal-line">
+                    <span class="prompt-symbol">$</span>
+                    <span class="command">cat role.txt</span>
+                </div>
+                <div class="terminal-output">
+                    <p class="hero-role" id="typingTarget"></p>
+                </div>
+                <div class="terminal-line fade-in-delayed">
+                    <span class="prompt-symbol">$</span>
+                    <span class="command">echo $STATUS</span>
+                </div>
+                <div class="terminal-output fade-in-delayed-2">
+                    <p class="hero-status">Currently mass-producing microservices at <span class="highlight">GoDaddy</span> <span class="blink-dot"></span></p>
+                </div>
+                <div class="terminal-line fade-in-delayed-3">
+                    <span class="prompt-symbol">$</span>
+                    <span class="cursor" id="cursor">_</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>scroll down</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
         <div class="container">
-            <div class="row">
-
-                <div class="col m6">
-                    <h5>Skilled</h5>
-                    <p>Proficient in several programming languages with modern design principles. I've been fascinated with the agile frameworks on projects. Some of my most significant projects are available on my porfifolio page. </p>
-                </div>
-                <div class="col s5 m4"></div>
-                <div class="col m6">
-                    <h5>Experienced</h5>
-                    <p>Experienced in differents areas, from building web sites, systems, mobile applications to leadership and foundation a junior enterprise, even administrating servers and fullstack development. Check out my working resume.</p>
-                </div>
-            </div><br><br>
-            <span>I'm available for remote work - if you would like to build something together, <a href="#contato">get in touch?</a> </span>
-        </div>
-    </div>
-
-    <!--Portifolio-->
-    <div id="portifolio" class="container">
-        <h5>Portifolio</h5>
-        <br>
-        <div class="row">
-            <div class="col s12 m6">
-                <div class="card blue-grey darken-1">
-                    <h6>CTRL+E</h6>
-                    <img src="images/ctrle.png" alt="">
-                    <p>Building the Ctrl+E event certification system</p>
-                    <div class="card-action">
-                        <a target="_blank" href="https://ctrle2017.dcx.ufpb.br/">See project</a>
-                    </div>
-                </div>
+            <div class="section-header reveal">
+                <span class="section-number">01</span>
+                <h2 class="section-title">about<span class="accent">()</span></h2>
+                <div class="section-line"></div>
             </div>
-            <div class="col s12 m6">
-                <div class="card blue-grey darken-1">
-                    <h6>Website Eagle</h6>
-                    <img src="images/eagle.png" alt="">
-                    <p>Building the website corpotative</p>
-                    <div class="card-action">
-                        <a href="http://www.eaglejr.com.br" target="_blank">See project</a>
-                    </div>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <div class="code-comment">// personal_statement.js</div>
+                    <p>
+                        Software Developer since <span class="highlight">2014</span>. I believe in the power of simplicity
+                        and have a strong foundation in <span class="highlight">Java</span>, <span class="highlight">Node.js</span>,
+                        and <span class="highlight">React</span>.
+                    </p>
+                    <p>
+                        Currently a Software Engineer at <span class="highlight">GoDaddy</span>, specializing in creating
+                        user-friendly payment systems and making the process as seamless as possible.
+                    </p>
+                    <p>
+                        When I'm not shipping code, I'm probably building AI-powered side projects,
+                        exploring MCP servers, or wondering why my Docker container works on my machine
+                        but not in production. <span class="muted">// classic</span>
+                    </p>
                 </div>
-            </div>
-            <div class="col s12 m6">
-                <div class="card blue-grey darken-1">
-                    <h6>Web Service Sisalfa</h6>
-                    <img src="images/sisalfa.png" alt="">
-                    <p>Building with Java Restfull an a Collaborative System</p>
-                    <div class="card-action">
-                        <a href="http://sisalfa.dcx.ufpb.br/" target="_blank">See project</a>
-                        <a href="https://github.com/matheusnicolas/web-service-sisalfa" target="_blank">GitHub</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m6">
-                <div class="card blue-grey darken-1">
-                    <h6>WebSite Insight</h6>
-                    <img src="images/clinica.png" alt="">
-                    <p>Building the simple website to Insight corporation</p>
-                    <div class="card-action">
-                        <a href="#portifolio">See project</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m6">
-                <div class="card blue-grey darken-1">
-                    <h6>SisTur</h6>                    
-                    <img src="images/api.png" alt="">
-                    <p>System to support tourism in the Mamanguape Valley Region</p>
-                    <div class="card-action">
-                        <a href="http://sistur.tk" target="_blank">See project</a>
-                    
-                </div>
-            </div>
-            </div>
-            <div class="col s12 m6">
-                <div class="card blue-grey darken-1">
-
-                    <h6>Suport System</h6>
-                    <img src="images/suporte.png" alt="">
-                    <p>Web system to serve the external community of the company
-                        <div class="card-action">
-                            <a class="modal-trigger" href="#!">See project</a>
-                            <!--<a class="waves-effect waves-light btn " href="#modal1">Modal</a>-->
+                <div class="about-card reveal">
+                    <div class="card-glass">
+                        <div class="about-avatar">
+                            <span class="avatar-emoji">&#x1F468;&#x200D;&#x1F4BB;</span>
+                            <span class="avatar-status">online</span>
                         </div>
+                        <div class="about-info">
+                            <div class="info-row">
+                                <span class="info-key">name:</span>
+                                <span class="info-value">"Robson Alves"</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-key">role:</span>
+                                <span class="info-value">"Software Engineer"</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-key">company:</span>
+                                <span class="info-value">"GoDaddy"</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-key">location:</span>
+                                <span class="info-value">"Remote, Brazil"</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-key">education:</span>
+                                <span class="info-value">"CS @ UFPB"</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-key">coffee:</span>
+                                <span class="info-value">true</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            
-
         </div>
-    </div>
-    <!--TEste-->
-    <!--  <div id="modal1" class="modal modal-fixed-footer">
-        <div class="modal-content">
-           
-           
-           
-            <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-            </div>
-        </div>
-    </div>-->
-    <!--Working resume-->
-    <div id="working" class="container">
-        <h5>Working Resume</h5>
+    </section>
 
-        <p><b>Front-End:</b> HTML5, CSS3, Javascript and some fron-end frameworks (Materialize, Bootstrap and PureCSS) </p>
-        <p><b>Back-End:</b> Git, Java, Restful Api, Django, Python</p>
-        <p><b>Others:</b> Android Studio, Scrum, MVC, DAO, Hibernate, JavaEE, Mysql </p>
-
-        <h5>Professional Experience</h5>
-        <ol>
-            <li> President of <a target="_blank" href="http://www.eaglejr.com.br">Eagle Digital Solutions</a> (a Junior Enterprise at UFPB) - October 2017 – Present (4 months) Rio Tinto , Paraíba, Brazil <br>
-- Manage all the activities carried out within the scope of the Junior Enterprise, maintaining its perfect order and operation, responding by its direct administration towards the objectives outlined.
-</li>
-            <li>Software Development Intern at Mega News Informática -May 2014 – July 2014 (3 months) - Irecê, Brazil. <br>
-- Acting as a developer of a web system to serve the external community of the company, integrated corporate website already in operation, aiming at interaction with customers.</li>
-            <li>Undergraduate Research Project at  UFPB (Federal University of Paraíba) - August 2016 – February 2017 <br>
-- Design and Development of a Collaborative System for the Literacy Process for Young People and Adults using Java Restful. </li>
-            <li>Workana - Web developer freelancer.</li>
-            <li>Research Project at IFBA (Federal Institute of Bahia) - January 2014 – December 2014 (1 year) - Irecê, Brazil. <br>
-- Study and test of the OpenFlow protocol.
-</li>
-            <li>Scholarship Holder at PIBID - February 2017 – Present (1 year) <br>
-- Using programming workshops with Code.org to develop logical thinking in high school students.
-</li>
-
-            <li>Scholarship Holder - Programming language monitor, improving the teaching of disciplines for DCX's computer science courses with learning objects and support for students in practical activitie.</li>
-        </ol>
-    </div>
-
-    <!--Footer-->
-    <footer id="contato" class="page-footer">
+    <!-- Skills Section -->
+    <section class="section" id="skills">
         <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Contact</h5>
-                    <p class="grey-text text-lighten-4">Want to get in touch? Find me on the web</p>
+            <div class="section-header reveal">
+                <span class="section-number">02</span>
+                <h2 class="section-title">skills<span class="accent">()</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <span class="skill-icon">{ }</span>
+                        <h3>Languages</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag" data-level="expert">Java</span>
+                        <span class="skill-tag" data-level="expert">JavaScript</span>
+                        <span class="skill-tag" data-level="expert">TypeScript</span>
+                        <span class="skill-tag" data-level="advanced">Python</span>
+                    </div>
                 </div>
-                <div class="links col l4 offset-l2 s12">
-                    <a class="grey-text text-lighten-3" href="https://github.com/robsonalvz" target="_blank"><i class="fa fa-github-alt"></i>GitHub</a>
-                    <a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/robsonalvz/" target="_blank"> <i class="fa fa-linkedin-square"></i>Linkedin</a>
-                    <a class="grey-text text-lighten-3" href="mailto:robson.alves@dce.ufpb.br" target="_blank"><i class="fa fa-envelope"></i>robson.alves@dce.ufpb.br</a>
-                    <a class="grey-text text-lighten-3" href="https://www.facebook.com/robsom18" target="_blank"><i class="fa fa-facebook-square"></i>Facebook</a>
-                    <a class="grey-text text-lighten-3" href="https://api.whatsapp.com/send?phone=5574999545622"><i class="fa fa-whatsapp"></i>WhatsApp</a>
-                    <a class="grey-text text-lighten-3" href="tel:+5574999545622"><i class="fa fa-phone-square"></i>Phone</a>
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <span class="skill-icon">&lt;/&gt;</span>
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag" data-level="expert">Spring Boot</span>
+                        <span class="skill-tag" data-level="expert">Node.js</span>
+                        <span class="skill-tag" data-level="advanced">GraphQL</span>
+                        <span class="skill-tag" data-level="advanced">RESTful APIs</span>
+                        <span class="skill-tag" data-level="advanced">Kafka</span>
+                        <span class="skill-tag" data-level="intermediate">Django</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <span class="skill-icon">UI</span>
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag" data-level="expert">React.js</span>
+                        <span class="skill-tag" data-level="advanced">Next.js</span>
+                        <span class="skill-tag" data-level="advanced">Angular</span>
+                        <span class="skill-tag" data-level="expert">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <span class="skill-icon">ops</span>
+                        <h3>DevOps & Cloud</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag" data-level="advanced">Docker</span>
+                        <span class="skill-tag" data-level="advanced">AWS</span>
+                        <span class="skill-tag" data-level="advanced">CI/CD</span>
+                        <span class="skill-tag" data-level="advanced">GitHub Actions</span>
+                        <span class="skill-tag" data-level="intermediate">Helm</span>
+                        <span class="skill-tag" data-level="advanced">Bash/Shell</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <span class="skill-icon">AI</span>
+                        <h3>AI & Emerging</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag" data-level="advanced">LLMs / Agents</span>
+                        <span class="skill-tag" data-level="advanced">MCP Servers</span>
+                        <span class="skill-tag" data-level="intermediate">Scikit-learn</span>
+                        <span class="skill-tag" data-level="advanced">Prompt Engineering</span>
+                        <span class="skill-tag" data-level="intermediate">RAG</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-category-header">
+                        <span class="skill-icon">db</span>
+                        <h3>Data & Tools</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag" data-level="advanced">SQL / MySQL</span>
+                        <span class="skill-tag" data-level="expert">Git</span>
+                        <span class="skill-tag" data-level="advanced">JUnit / Mockito</span>
+                        <span class="skill-tag" data-level="intermediate">JMeter</span>
+                        <span class="skill-tag" data-level="advanced">Scrum</span>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="footer-copyright">
-            <div class="container">
-                Handmade by me ©2017
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-number">03</span>
+                <h2 class="section-title">experience<span class="accent">()</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="code-comment reveal" style="margin-bottom: 2rem;">// git log --oneline --graph career.md</div>
+
+            <div class="timeline">
+                <!-- GoDaddy -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot active"></div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Software Engineer</h3>
+                                <a href="https://www.godaddy.com" target="_blank" rel="noopener" class="timeline-company-link">
+                                    <img src="https://www.google.com/s2/favicons?domain=godaddy.com&sz=32" alt="GoDaddy" class="company-logo">
+                                    <span class="timeline-company">GoDaddy</span>
+                                </a>
+                            </div>
+                            <span class="timeline-date">Jun 2022 — Present</span>
+                        </div>
+                        <span class="timeline-location">Remote</span>
+                        <ul class="timeline-details">
+                            <li>Built APIs for GoDaddy's Commerce 3rd Party Developer Ecosystem, increasing developer velocity by <span class="metric">30%</span> and reducing support dependency</li>
+                            <li>Created robust discount management functionalities, resulting in over <span class="metric">$500K</span> in Annual Recurring Revenue (ARR)</li>
+                            <li>Enhanced Billing API with event-driven design using <span class="highlight">Kafka</span> to improve subscription tracking and reliability</li>
+                            <li>Led regression, performance, and load testing using JUnit, Mockito and JMeter. Migrated CI/CD from Jenkins to <span class="highlight">GitHub Actions</span></li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Java</span><span>Spring Boot</span><span>Kafka</span><span>GraphQL</span><span>GitHub Actions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Softplan -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Software Engineer</h3>
+                                <a href="https://www.softplan.com.br" target="_blank" rel="noopener" class="timeline-company-link">
+                                    <img src="https://www.google.com/s2/favicons?domain=softplan.com.br&sz=32" alt="Softplan" class="company-logo">
+                                    <span class="timeline-company">Softplan</span>
+                                </a>
+                            </div>
+                            <span class="timeline-date">Jun 2020 — Jun 2022</span>
+                        </div>
+                        <span class="timeline-location">Remote</span>
+                        <ul class="timeline-details">
+                            <li>Developed software for the Legal area, scaling the application to <span class="metric">300,000</span> users</li>
+                            <li>Migrated existing applications to microservices using Docker, GraphQL, RESTful API, Spring Boot, and React.js with TypeScript</li>
+                            <li>Led the creation of core libraries for the team and documented best practices and coding standards</li>
+                            <li>Mentored new developers through pair-programming, enhancing onboarding experience</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Java</span><span>React</span><span>TypeScript</span><span>Docker</span><span>GraphQL</span><span>Microservices</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Neoron -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Software Engineer</h3>
+                                <a href="https://neoron.io" target="_blank" rel="noopener" class="timeline-company-link">
+                                    <img src="https://www.google.com/s2/favicons?domain=neoron.io&sz=32" alt="Neoron" class="company-logo">
+                                    <span class="timeline-company">Fabwork / Neoron</span>
+                                </a>
+                            </div>
+                            <span class="timeline-date">Jun 2019 — Jun 2020</span>
+                        </div>
+                        <span class="timeline-location">Joao Pessoa, Brazil</span>
+                        <ul class="timeline-details">
+                            <li>Developed <span class="highlight">Neoron</span>, a chatbot web application, from conception to delivery using Node.js and React.js</li>
+                            <li>Created chatbot ML functionality with Python using <span class="highlight">Scikit-learn</span>, integrated with Node.js backend</li>
+                            <li>Migrated cloud infrastructure from Google Cloud to <span class="highlight">AWS</span> for improved performance</li>
+                            <li>Created CI/CD pipelines using GitLab and Docker</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Node.js</span><span>React</span><span>Python</span><span>ML</span><span>AWS</span><span>Docker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- End of log -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot end"></div>
+                    </div>
+                    <div class="timeline-content timeline-end">
+                        <span class="code-comment">// ...and before that, a CS student who founded a Junior Enterprise</span>
+                        <span class="code-comment">// and thought jQuery was peak technology</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-cta reveal">
+                <p>Liked what you see? Let's build something together.</p>
+                <a href="https://api.whatsapp.com/send?phone=5574999545622" target="_blank" rel="noopener" class="cta-button">
+                    <span class="cta-icon">wa</span>
+                    Message me on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-number">04</span>
+                <h2 class="section-title">projects<span class="accent">()</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="code-comment reveal" style="margin-bottom: 2rem;">// ls -la ~/side-projects/</div>
+
+            <div class="projects-grid">
+                <div class="project-card reveal">
+                    <div class="card-glass">
+                        <div class="project-header">
+                            <img src="https://www.google.com/s2/favicons?domain=godaddy.com&sz=64" alt="Poynt" class="project-logo">
+                            <div class="project-links">
+                                <span class="project-type">Commerce</span>
+                            </div>
+                        </div>
+                        <h3 class="project-name">Poynt / GoDaddy Payments</h3>
+                        <p class="project-desc">Open commerce platform powering GoDaddy's payment ecosystem. Working on subscriptions, billing plans, and discount management APIs that drive over $500K in ARR across the merchant network.</p>
+                        <div class="project-tags">
+                            <span>Java</span><span>Spring Boot</span><span>Kafka</span><span>Subscriptions</span><span>Billing APIs</span><span>GraphQL</span>
+                        </div>
+                        <a href="https://poynt.godaddy.com" target="_blank" rel="noopener" class="project-link-ext">poynt.godaddy.com &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project-card featured reveal">
+                    <div class="card-glass">
+                        <div class="project-header">
+                            <img src="https://www.google.com/s2/favicons?domain=talklikeadev.com&sz=64" alt="TalkLikeADev" class="project-logo">
+                            <div class="project-links">
+                                <span class="project-type">AI Product</span>
+                            </div>
+                        </div>
+                        <h3 class="project-name">TalkLikeADev.com</h3>
+                        <p class="project-desc">AI-powered English learning platform for developers. Features real-time WebRTC voice streaming, multi-agent AI orchestration, speech-to-text pipeline, vocabulary analysis engine, and adaptive pronunciation feedback.</p>
+                        <div class="project-tags">
+                            <span>WebRTC</span><span>LLM APIs</span><span>Multi-Agent AI</span><span>STT/TTS</span><span>Next.js</span><span>TypeScript</span><span>Real-time Streaming</span>
+                        </div>
+                        <a href="https://talklikeadev.com" target="_blank" rel="noopener" class="project-link-ext">talklikeadev.com &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="card-glass">
+                        <div class="project-header">
+                            <span class="project-icon">&#x2696;</span>
+                            <div class="project-links">
+                                <span class="project-type">LegalTech</span>
+                            </div>
+                        </div>
+                        <h3 class="project-name">E-SAJ</h3>
+                        <p class="project-desc">Ahead of the digital transformation in Brazilian Justice. The Justice Automation System (SAJ) manages half of all state justice processes in Brazil.</p>
+                        <div class="project-tags">
+                            <span>Java</span><span>Microservices</span><span>300K+ users</span><span>Legal</span>
+                        </div>
+                        <a href="https://esaj.tjsp.jus.br/esaj" target="_blank" rel="noopener" class="project-link-ext">esaj.tjsp.jus.br/esaj &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="card-glass">
+                        <div class="project-header">
+                            <img src="https://www.google.com/s2/favicons?domain=neoron.io&sz=64" alt="Neoron" class="project-logo">
+                            <div class="project-links">
+                                <span class="project-type">AI Chatbot</span>
+                            </div>
+                        </div>
+                        <h3 class="project-name">Neoron</h3>
+                        <p class="project-desc">AI-powered chatbot platform to maximize the benefits and minimize the efforts of creating intelligent conversational agents. Built from scratch.</p>
+                        <div class="project-tags">
+                            <span>Python</span><span>ML</span><span>Node.js</span><span>React</span><span>AWS</span>
+                        </div>
+                        <a href="https://neoron.io" target="_blank" rel="noopener" class="project-link-ext">neoron.io &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="card-glass">
+                        <div class="project-header">
+                            <span class="project-icon">&#x1F3E5;</span>
+                            <div class="project-links">
+                                <span class="project-type">HealthTech</span>
+                            </div>
+                        </div>
+                        <h3 class="project-name">Medical Scheduling System</h3>
+                        <p class="project-desc">Full-featured healthcare platform for appointment scheduling, medical procedures, patient registration, and report generation. Built as a freelance project end-to-end.</p>
+                        <div class="project-tags">
+                            <span>PHP</span><span>Laravel</span><span>React</span><span>MySQL</span><span>REST API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="card-glass">
+                        <div class="project-header">
+                            <span class="project-icon">&#x2600;</span>
+                            <div class="project-links">
+                                <span class="project-type">Energy</span>
+                            </div>
+                        </div>
+                        <h3 class="project-name">Solar Energy Calculator</h3>
+                        <p class="project-desc">Contract calculation platform for solar energy based on user's energy bill data. Includes a web scraper built with JavaScript to automatically extract billing data from utility providers.</p>
+                        <div class="project-tags">
+                            <span>JavaScript</span><span>Web Scraping</span><span>Crawler</span><span>Node.js</span><span>Solar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-contact" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-number">05</span>
+                <h2 class="section-title">connect<span class="accent">()</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-terminal reveal">
+                <div class="terminal-bar">
+                    <div class="terminal-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="terminal-title">contact@robson ~ %</span>
+                </div>
+                <div class="terminal-body contact-body">
+                    <div class="terminal-line">
+                        <span class="prompt-symbol">$</span>
+                        <span class="command">robson.connect(you)</span>
+                    </div>
+                    <div class="terminal-output">
+                        <p class="contact-intro">Want to build something together? I'm available for interesting projects, consulting, and conversations about AI, distributed systems, or why tabs are superior to spaces.</p>
+                    </div>
+                    <div class="contact-links">
+                        <a href="mailto:robs.alvz@gmail.com" class="contact-link">
+                            <span class="contact-link-icon">@</span>
+                            <span class="contact-link-label">robs.alvz@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/robsonalvz" target="_blank" rel="noopener" class="contact-link">
+                            <span class="contact-link-icon">gh</span>
+                            <span class="contact-link-label">github.com/robsonalvz</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/robsonalvz/" target="_blank" rel="noopener" class="contact-link">
+                            <span class="contact-link-icon">in</span>
+                            <span class="contact-link-label">linkedin.com/in/robsonalvz</span>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=5574999545622" target="_blank" rel="noopener" class="contact-link">
+                            <span class="contact-link-icon">wa</span>
+                            <span class="contact-link-label">WhatsApp</span>
+                        </a>
+                    </div>
+                    <div class="terminal-line" style="margin-top: 1.5rem;">
+                        <span class="prompt-symbol">$</span>
+                        <span class="command output-success">Connection request sent successfully.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Badge -->
+    <div class="ai-badge reveal">
+        <div class="container">
+            <div class="ai-badge-content">
+                <div class="ai-badge-icon">
+                    <span class="ai-pulse"></span>
+                    AI
+                </div>
+                <div class="ai-badge-text">
+                    <span class="ai-badge-title">Yes, an AI helped build this site.</span>
+                    <span class="ai-badge-sub">But I'm the one who knew what to ask, what to ship, and what to delete. The craft is in the curation.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span class="code-comment">// TODO: add more sleep()</span>
+                </div>
+                <div class="footer-center">
+                    <span>Built with vanilla JS & a well-prompted AI</span>
+                    <span class="muted">No node_modules were installed in the making of this portfolio</span>
+                </div>
+                <div class="footer-right">
+                    <span class="muted">&copy; 2025 Robson Alves</span>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
-            $('.modal').modal();
-        });
-        jQuery(document).ready(function($) {
-            $(".scroll").click(function(event) {
-                event.preventDefault();
-                $('html,body').animate({
-                    scrollTop: $(this.hash).offset().top
-                }, 900);
-            });
-        });
-
-    </script>
-    
+    <script src="js/main.js"></script>
 </body>
-
 </html>
-
