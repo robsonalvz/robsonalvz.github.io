@@ -713,7 +713,6 @@ body {
 
 /* Featured AI skill card */
 .skill-featured {
-    grid-column: 1 / -1;
     background: linear-gradient(135deg, rgba(0, 255, 170, 0.04) 0%, rgba(0, 212, 255, 0.04) 100%);
     border-color: rgba(0, 255, 170, 0.12);
     position: relative;
@@ -742,19 +741,8 @@ body {
     box-shadow: 0 10px 50px rgba(0, 255, 170, 0.08);
 }
 
-.skill-featured .skill-tags {
-    gap: 0.5rem;
-}
-
-.skill-featured .skill-tag {
-    font-size: 0.75rem;
-    padding: 0.35rem 0.75rem;
-}
-
 .skill-featured-badge {
-    position: absolute;
-    top: 0.8rem;
-    right: 0.8rem;
+    display: inline-block;
     font-family: var(--font-mono);
     font-size: 0.6rem;
     color: var(--accent);
@@ -763,7 +751,13 @@ body {
     border-radius: 100px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    animation: blink 2.5s ease-in-out infinite;
+    margin-bottom: 0.5rem;
+    animation: badgePulse 2.5s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }
 
 .skill-icon-ai {
