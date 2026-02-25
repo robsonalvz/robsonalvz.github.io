@@ -711,6 +711,66 @@ body {
     color: var(--accent);
 }
 
+/* Featured AI skill card */
+.skill-featured {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, rgba(0, 255, 170, 0.04) 0%, rgba(0, 212, 255, 0.04) 100%);
+    border-color: rgba(0, 255, 170, 0.12);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-featured::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-secondary), var(--accent));
+    background-size: 200% 100%;
+    animation: gradientSlide 3s linear infinite;
+}
+
+@keyframes gradientSlide {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+}
+
+.skill-featured:hover {
+    border-color: rgba(0, 255, 170, 0.25);
+    box-shadow: 0 10px 50px rgba(0, 255, 170, 0.08);
+}
+
+.skill-featured .skill-tags {
+    gap: 0.5rem;
+}
+
+.skill-featured .skill-tag {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.75rem;
+}
+
+.skill-featured-badge {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--accent);
+    background: var(--accent-dim);
+    padding: 0.2rem 0.5rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    animation: blink 2.5s ease-in-out infinite;
+}
+
+.skill-icon-ai {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    color: var(--bg-primary);
+}
+
 /* --- Experience Timeline --- */
 .timeline {
     position: relative;
