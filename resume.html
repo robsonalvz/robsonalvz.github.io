@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume - Robson Alves</title>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 13px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #1a1a1a;
+    line-height: 1.4;
+    padding: 0.4in 0.5in;
+    max-width: 8.5in;
+    margin: 0 auto;
+  }
+
+  a { color: #1a1a1a; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Header */
+  header { text-align: center; margin-bottom: 10px; }
+  header h1 { font-size: 26px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 2px; }
+  header p.title { font-size: 14px; color: #444; margin-bottom: 6px; }
+
+  .contact {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    color: #444;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+  }
+  .contact a { color: #444; }
+
+  /* Sections */
+  section { margin-bottom: 8px; }
+
+  h2 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 2px;
+    margin-bottom: 6px;
+    color: #1a1a1a;
+  }
+
+  /* Summary */
+  .summary {
+    font-size: 12.5px;
+    color: #333;
+    line-height: 1.45;
+  }
+
+  /* Experience */
+  .job { margin-bottom: 7px; }
+  .job:last-child { margin-bottom: 0; }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1px;
+  }
+
+  .job-title {
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .job-date {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    color: #555;
+    white-space: nowrap;
+  }
+
+  .job-meta {
+    font-size: 11px;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 2px;
+  }
+
+  .job ul {
+    list-style: disc;
+    padding-left: 16px;
+    font-size: 12.5px;
+    color: #222;
+  }
+
+  .job li { margin-bottom: 1px; line-height: 1.4; }
+
+  .tech {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 10.5px;
+    color: #666;
+    margin-top: 2px;
+  }
+
+  /* Skills */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 3px 10px;
+    font-size: 12.5px;
+  }
+
+  .skills-grid dt {
+    font-weight: 700;
+    color: #333;
+    text-align: right;
+    font-size: 12.5px;
+    white-space: nowrap;
+  }
+
+  .skills-grid dd { color: #222; }
+
+  /* Education */
+  .edu {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 12.5px;
+  }
+
+  .edu-degree { font-weight: 700; }
+  .edu-school { color: #444; }
+
+  /* Projects */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 16px;
+    font-size: 12px;
+  }
+
+  .project { line-height: 1.4; }
+
+  .project-name {
+    font-weight: 700;
+    font-size: 12.5px;
+  }
+
+  .project-type {
+    font-size: 10.5px;
+    color: #666;
+  }
+
+  .project-desc {
+    color: #333;
+    font-size: 11px;
+  }
+
+  .project-tech {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    color: #777;
+  }
+
+  /* Print */
+  @media print {
+    html { font-size: 13px; }
+    body { padding: 0; max-width: none; }
+    a { color: #1a1a1a !important; }
+    .contact a { color: #444 !important; }
+    section { break-inside: avoid; }
+  }
+
+  @page {
+    size: letter;
+    margin: 0.4in 0.5in;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Robson Alves</h1>
+  <p class="title">Software Engineer</p>
+  <div class="contact">
+    <span>robs.alvz@gmail.com</span>
+    <span>+55 74 99954-5622</span>
+    <span><a href="https://github.com/robsonalvz">github.com/robsonalvz</a></span>
+    <span><a href="https://linkedin.com/in/robsonalvz">linkedin.com/in/robsonalvz</a></span>
+    <span>Remote, Brazil</span>
+  </div>
+</header>
+
+<section>
+  <h2>Summary</h2>
+  <p class="summary">Software Engineer with 12+ years of experience building scalable systems, payment platforms, and developer tools. Currently at GoDaddy, specializing in commerce APIs and subscription billing. Experienced in AI development, including multi-agent orchestration, real-time voice streaming, and LLM integrations.</p>
+</section>
+
+<section>
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Software Engineer &mdash; GoDaddy</span>
+      <span class="job-date">Jun 2022 &ndash; Present</span>
+    </div>
+    <div class="job-meta">Remote</div>
+    <ul>
+      <li>Designed and implemented RESTful APIs in Java/Spring Boot for GoDaddy's Commerce 3rd Party Developer Ecosystem, increasing developer velocity by 30% and reducing support dependency</li>
+      <li>Built discount management engine handling complex pricing rules and promotional flows, directly contributing to $500K+ in ARR</li>
+      <li>Architected event-driven Billing API using Kafka for async subscription lifecycle management, enabling real-time tracking at scale</li>
+      <li>Led end-to-end quality engineering with JUnit, Mockito and JMeter; migrated CI/CD from Jenkins to GitHub Actions</li>
+    </ul>
+    <div class="tech">Java, Node.js, Spring Boot, Kafka, GraphQL, OpenSearch, GitHub Actions</div>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Software Engineer &mdash; Softplan</span>
+      <span class="job-date">Jun 2020 &ndash; Jun 2022</span>
+    </div>
+    <div class="job-meta">Remote</div>
+    <ul>
+      <li>Developed software for the Legal sector, scaling the application to 300,000+ users</li>
+      <li>Migrated existing applications to microservices using Docker, GraphQL, RESTful APIs, Spring Boot, and React with TypeScript</li>
+      <li>Led the creation of core libraries for the team and documented best practices and coding standards</li>
+      <li>Mentored new developers through pair programming, enhancing onboarding experience</li>
+    </ul>
+    <div class="tech">Java, React, TypeScript, Docker, GraphQL, Microservices</div>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Software Engineer &mdash; Fabwork / Neoron</span>
+      <span class="job-date">Jun 2019 &ndash; Jun 2020</span>
+    </div>
+    <div class="job-meta">Jo&atilde;o Pessoa, Brazil</div>
+    <ul>
+      <li>Developed Neoron, a chatbot web application, from conception to delivery using Node.js and React</li>
+      <li>Created chatbot ML functionality with Python using Scikit-learn, integrated with Node.js backend</li>
+      <li>Migrated cloud infrastructure from Google Cloud to AWS; created CI/CD pipelines using GitLab and Docker</li>
+    </ul>
+    <div class="tech">Node.js, React, Python, ML, AWS, Docker</div>
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <dl class="skills-grid">
+    <dt>Languages</dt>
+    <dd>Java, JavaScript, TypeScript, Python</dd>
+    <dt>Backend</dt>
+    <dd>Spring Boot, Node.js, GraphQL, RESTful APIs, Kafka, Microservices, Django</dd>
+    <dt>Frontend</dt>
+    <dd>React, Next.js, Angular, Ember.js, HTML/CSS</dd>
+    <dt>DevOps &amp; Cloud</dt>
+    <dd>Docker, AWS, AWS Lambda, CI/CD, GitHub Actions, GitLab CI, Observability, Kibana, Helm, Bash/Shell</dd>
+    <dt>AI &amp; Emerging</dt>
+    <dd>LLMs / Agents, MCP Servers, RAG, Scikit-learn, Prompt Engineering, WebRTC / STT / TTS</dd>
+    <dt>Data &amp; Tools</dt>
+    <dd>SQL / MySQL, MongoDB, DynamoDB, OpenSearch, Elasticsearch, Data Warehouse, Git, JUnit / Mockito, JMeter, Scrum</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    <div class="project">
+      <span class="project-name">TalkLikeADev.com</span> <span class="project-type">&mdash; AI Product</span>
+      <div class="project-desc">AI-powered English learning platform for developers. Real-time WebRTC voice streaming, multi-agent AI orchestration, and speech-to-text pipeline.</div>
+      <div class="project-tech">Next.js, TypeScript, WebRTC, AI Agents</div>
+    </div>
+    <div class="project">
+      <span class="project-name">Poynt / GoDaddy Payments</span> <span class="project-type">&mdash; Platform</span>
+      <div class="project-desc">Open commerce platform powering GoDaddy's payment ecosystem. Subscription billing, discount management, and developer APIs.</div>
+      <div class="project-tech">Java, Commerce, APIs, Enterprise</div>
+    </div>
+    <div class="project">
+      <span class="project-name">E-SAJ</span> <span class="project-type">&mdash; LegalTech</span>
+      <div class="project-desc">Justice Automation System managing half of all state justice processes in Brazil. Scaled to 300K+ users.</div>
+      <div class="project-tech">Java, Microservices, React</div>
+    </div>
+    <div class="project">
+      <span class="project-name">Neoron</span> <span class="project-type">&mdash; AI Chatbot</span>
+      <div class="project-desc">AI-powered chatbot platform for creating intelligent conversational agents. Built from scratch.</div>
+      <div class="project-tech">Python, ML, Node.js, React, AWS</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="edu">
+    <div>
+      <span class="edu-degree">B.S. Computer Science</span> <span class="edu-school">&mdash; Universidade Federal da Para&iacute;ba (UFPB)</span> <span class="edu-school">&mdash; GPA: 9.5/10</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

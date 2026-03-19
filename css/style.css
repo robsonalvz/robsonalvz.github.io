@@ -277,12 +277,12 @@ body {
 
 /* --- Hero Section --- */
 .hero {
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 6rem 2rem 2rem;
     position: relative;
 }
 
@@ -491,15 +491,17 @@ body {
 }
 
 .scroll-arrow {
-    width: 1px;
-    height: 30px;
-    background: linear-gradient(to bottom, var(--accent), transparent);
-    animation: scrollPulse 2s ease-in-out infinite;
+    width: 16px;
+    height: 16px;
+    border-right: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
+    transform: rotate(45deg);
+    animation: scrollBounce 2s ease-in-out infinite;
 }
 
-@keyframes scrollPulse {
-    0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
-    50% { opacity: 1; transform: scaleY(1); }
+@keyframes scrollBounce {
+    0%, 100% { transform: rotate(45deg) translateY(0); opacity: 1; }
+    50% { transform: rotate(45deg) translateY(8px); opacity: 0.3; }
 }
 
 /* --- Sections --- */
@@ -1350,8 +1352,8 @@ body {
     }
 
     .hero {
-        min-height: 100svh;
-        padding: 1.5rem;
+        min-height: auto;
+        padding: 5rem 1.5rem 1.5rem;
     }
 
     .hero-name h1 {
@@ -1551,7 +1553,7 @@ body {
     }
 
     .hero {
-        padding: 1rem;
+        padding: 5rem 1rem 1rem;
     }
 
     .hero-name h1 {
