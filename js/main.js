@@ -10,11 +10,11 @@
     // --- Typing Effect ---
     const typingTarget = document.getElementById('typingTarget');
     const phrases = [
-        'Software Engineer. Building payment systems at GoDaddy.',
-        'Fullstack developer. Java, Node, React, and too much coffee.',
-        'Breaking monoliths into microservices since 2019.',
-        'Believer in simplicity. Powered by TypeScript and curiosity.',
-        'From chatbots with ML to commerce APIs at scale.'
+        'AI-First Engineer. Building commerce platforms at GoDaddy.',
+        'Founder of TalkLikeADev. Multi-agent AI, voice streaming, MCP servers.',
+        'From ML chatbots to multi-agent orchestration at scale.',
+        'Java, Python, TypeScript. Shipping AI products, not just features.',
+        'Building with LLMs, RAG, and MCP servers. Powered by curiosity.'
     ];
     let phraseIndex = 0;
     let charIndex = 0;
